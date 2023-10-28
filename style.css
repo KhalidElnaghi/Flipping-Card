@@ -1,0 +1,157 @@
+/* Import Google Font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #121321;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+  transform: translate(-150px, -100px);
+}
+section::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  transform: translate(150px, 100px);
+  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+}
+.container {
+  position: relative;
+  height: 220px;
+  width: 370px;
+  z-index: 99;
+  transition: all 0.5s;
+  transform-style: preserve-3d;
+}
+.container:hover {
+  transform: rotateY(180deg);
+}
+
+.container .card {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(225, 225, 255, 0.1);
+  box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(20px);
+  color: #fff;
+  backface-visibility: hidden;
+}
+
+.front-face header,
+.front-face .logo {
+  display: flex;
+  align-items: center;
+}
+.front-face header {
+  justify-content: space-between;
+}
+.front-face .logo img {
+  width: 45px;
+  margin-right: 10px;
+}
+.front-face h5 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.front-face .chip {
+  width: 50px;
+}
+
+.front-face-details {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.front-face-details h6 {
+  font-weight: 400;
+  font-size: 10px;
+}
+.front-face-details h4 {
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.front-face-details h5 {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.card.back-face {
+  padding: 15px 30px 20px 15px;
+  border: none;
+  transform: rotateY(180deg);
+}
+
+.card.back-face h6,
+p {
+  font-size: 8px;
+}
+.card.back-face .dark-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #000;
+  margin-top: 10px;
+}
+
+.striped-line {
+  position: relative;
+  margin-top: 75px;
+  width: 80%;
+  height: 40px;
+  background: repeating-linear-gradient(
+    #fff,
+    #fff 3px,
+    #f4f4f4 0px,
+    #f4f4f4 9px
+  );
+  border-radius: 5px;
+}
+
+.striped-line h5 {
+  position: absolute;
+  padding: 5px;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  color: #000;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+footer {
+  margin-top: 20px;
+}
